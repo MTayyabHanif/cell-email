@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cell Email\n"
+"POT-Creation-Date: 2012-11-26 07:20+0700\n"
+"PO-Revision-Date: 2012-11-26 07:52+0700\n"
+"Last-Translator: Dion <ifdion@gmail.com>\n"
+"Language-Team: Dion <ifdion@gmail.com>\n"
+"Language: Bahasa Indonesia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cell-email.php:63
+#, php-format
+msgid "Welcome to %1$s %2$s!"
+msgstr "Selamat Datang di %1$s %2$s!"
+
+#: ../cell-email.php:68
+#, php-format
+msgid "<p>A very special welcome to you, %1$s. Thank you for joining %2$s!</p>"
+msgstr "<p>Selamat Datang %1$s. Terima kasih telah bergabung di %2$s!</p>"
+
+#: ../cell-email.php:70
+#, php-format
+msgid ""
+"<p> Your password is <strong style=\"color:orange\">%s</strong> <br> Please "
+"keep it secret and keep it safe! </p>"
+msgstr ""
+"<p> Password-mu adalah <strong style=\"color:orange\">%s</strong> <br> Jaga "
+"dan simpan baik baik! </p>"
+
+#: ../cell-email.php:72
+#, php-format
+msgid ""
+"<p>We hope you enjoy your stay at %s. If you have any problems, questions, "
+"opinions, praise, comments, suggestions, please feel free to contact us at "
+"any time</p>"
+msgstr ""
+"<p>Kami harap anda menikmati kunjungan anda di %s. Jika ada keluhan, "
+"pertanyaan, pendapat, pujian, komentar, pujian, silahkan hubungi kami kapan "
+"saja</p>"
+
+#: ../cell-email.php:92
+msgid "Password Reset for "
+msgstr "Reset Password untuk"
+
+#: ../cell-email.php:110
+#, php-format
+msgid ""
+"<p>It likes like you (hopefully) want to reset your password for your %s "
+"account.</p>"
+msgstr ""
+"<p>Sepertinya anda (semoga bukan orang lain) mau me-reset password akun mu "
+"di %s</p>"
+
+#: ../cell-email.php:112
+#, php-format
+msgid ""
+"<p> To reset your password, visit the following address, otherwise just "
+"ignore this email and nothing will happen. <br> %s <p>"
+msgstr ""
+"<p> Untuk me-reset password, kunjungi alamat web berikut ini. Atau abaikan "
+"email ini dan tidak akan ada yang diubah <br> %s <p>"
+
+#: ../config.php:10 ../config.php:11
+msgid "Email"
+msgstr "Email"
+
+#: ../config.php:49
+msgid "Use as Email Header"
+msgstr "Gunakan untuk Header Email"
+
+#: ../config.php:64
+msgid "Email Options"
+msgstr "Pengaturan Email"
+
+#: ../config.php:114
+msgid "Email Identity"
+msgstr "Identitas Email"
+
+#: ../config.php:121
+msgid "From Name"
+msgstr "Nama Pengirim"
+
+#: ../config.php:126
+msgid "This will be used as the email sender name"
+msgstr "Ini akan digunakan untuk nama pengirim email"
+
+#: ../config.php:132
+msgid "From Email Address"
+msgstr "Alamat Email Pengirim"
+
+#: ../config.php:137
+msgid "This will be used as the sender email"
+msgstr "Ini akan digunakan untuk alamat pegirim email"
+
+#: ../config.php:143
+msgid "Email Design"
+msgstr "Desain Email"
+
+#: ../config.php:150
+msgid "Email Header"
+msgstr "Header Email"
+
+#: ../config.php:158
+msgid "Email Header Preview"
+msgstr "Pratinjau Header Email"
+
+#: ../config.php:166
+msgid "Email Preview"
+msgstr "Pratinjau Email"
+
+#: ../config.php:188
+msgid "<p>Basic email corespondance identity.</p>"
+msgstr "<p>Identitas dasar email korespondensi.</p>"
+
+#: ../config.php:192
+msgid "<p>Basic email design options.</p>"
+msgstr "<p>Pengaturan dasar email.</p>"
+
+#: ../config.php:196
+msgid "<p>Send a test email. </p>"
+msgstr "<p>Tes Email. </p>"
+
+#: ../config.php:221
+msgid "Upload Banner"
+msgstr "Unggah Banner"
+
+#: ../config.php:222
+msgid "Upload an image for the banner."
+msgstr "Unggah gambar untuk banner."
+
+#: ../config.php:237
+msgid "Notification Email"
+msgstr "Email Notifikasi"
+
+#: ../config.php:238
+msgid "Reset Password Email"
+msgstr "Email Reset Password"
+
+#: ../template/email-footer.php:12
+#, php-format
+msgid "Copyright %1$s %2$s, All rights reserved."
+msgstr "Hak Cipta %1$s %2$s."
