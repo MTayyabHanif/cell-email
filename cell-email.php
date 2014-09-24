@@ -69,14 +69,14 @@ this one is a pluggable function, so it doesnt need a hook
 if( ! function_exists('wp_new_user_notification') ) {
 	function wp_new_user_notification($user_id, $plaintext_pass) {
 		$user = new WP_User($user_id);
-		$user_login = stripslashes($user->user_login);
+		$display_name = stripslashes($user->display_name);
 		$user_email = stripslashes($user->user_email);
-		$email_subject = sprintf(__('Welcome to %1$s %2$s!', 'cell-email'), get_bloginfo('name'), $user_login);
+		$email_subject = sprintf(__('Welcome to %1$s %2$s!', 'cell-email'), get_bloginfo('name'), $display_name);
 		
 		ob_start();
 		include('template/email-header.php');
 
-		printf(__('<p>A very special welcome to you, %1$s. Thank you for joining %2$s!</p>', 'cell-email'), $user_login, get_bloginfo('name'));
+		printf(__('<p>A very special welcome to you, %1$s. Thank you for joining %2$s!</p>', 'cell-email'), $display_name, get_bloginfo('name'));
 
 		printf(__('<p> Your password is <strong style="color:orange">%s</strong> <br> Please keep it secret and keep it safe! </p>', 'cell-email'), $plaintext_pass);
 
