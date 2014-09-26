@@ -69,7 +69,10 @@ this one is a pluggable function, so it doesnt need a hook
 if( ! function_exists('wp_new_user_notification') ) {
 	function wp_new_user_notification($user_id, $plaintext_pass) {
 		$user = new WP_User($user_id);
-		$display_name = stripslashes($user->display_name);
+		$display_name = $user->display_name;
+		if (isset($user->first_name) && $user->first_name != '') {
+			$display_name = $user->first_name;
+		}
 		$user_email = stripslashes($user->user_email);
 		$email_subject = sprintf(__('Welcome to %1$s %2$s!', 'cell-email'), get_bloginfo('name'), $display_name);
 		
