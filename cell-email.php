@@ -69,6 +69,7 @@ this one is a pluggable function, so it doesnt need a hook
 if( ! function_exists('wp_new_user_notification') ) {
 	function wp_new_user_notification($user_id, $plaintext_pass) {
 		$user = new WP_User($user_id);
+
 		$user_login = stripslashes($user->user_login);
 		$greetings = $user_login;
 		if ($user->display_name != '') {
@@ -76,9 +77,11 @@ if( ! function_exists('wp_new_user_notification') ) {
 		}
 		$user_email = stripslashes($user->user_email);
 		$email_subject = sprintf(__('Welcome to %1$s %2$s!', 'cell-email'), get_bloginfo('name'), $greetings);
+
 		
 		ob_start();
 		include('template/email-header.php');
+
 
 		printf(__('<p>A very special welcome to you, %1$s. Thank you for joining %2$s!</p>', 'cell-email'), $greetings, get_bloginfo('name'));
 
@@ -91,6 +94,18 @@ if( ! function_exists('wp_new_user_notification') ) {
 		ob_end_clean();
 
 		wp_mail($user_email, $email_subject, $message);
+
+		// notification to admin
+
+	    // The blogname option is escaped with esc_html on the way into the database in sanitize_option
+	    // we want to reverse this for the plain text arena of emails.
+	    $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
+
+	    $message = sprintf(__('New user registration on your site %s:'), $blogname) . "\r\n\r\n";
+	    $message .= sprintf(__('Username: %s'), $user->user_login) . "\r\n\r\n";
+	    $message .= sprintf(__('E-mail: %s'), $user->user_email) . "\r\n";
+
+	    wp_mail(get_option('admin_email'), sprintf(__('[%s] New User Registration'), $blogname), $message);
 
 	}
 
