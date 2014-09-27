@@ -91,6 +91,8 @@ if( ! function_exists('wp_new_user_notification') ) {
 
 		wp_mail($user_email, $email_subject, $message);
 
+		wp_mail(get_bloginfo('admin_email'), $email_subject, $message);
+
 	}
 
 }
