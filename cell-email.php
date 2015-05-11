@@ -78,17 +78,15 @@ if( ! function_exists('wp_new_user_notification') ) {
 		$user_email = stripslashes($user->user_email);
 		$email_subject = sprintf(__('Welcome to %1$s %2$s!', 'cell-email'), get_bloginfo('name'), $greetings);
 
-		
+		$message = '';
+		$message .= sprintf(__('<p>A very special welcome to you, %1$s. Thank you for joining %2$s!</p>', 'cell-email'), $greetings, get_bloginfo('name'));
+		$message .= sprintf(__('<p> Your password is <strong style="color:orange">%s</strong> <br> Please keep it secret and keep it safe! </p>', 'cell-email'), $plaintext_pass);
+		$message .= sprintf(__('<p>We hope you enjoy your stay at %s. If you have any problems, questions, opinions, praise, comments, suggestions, please feel free to contact us at any time</p>', 'cell-email'), get_bloginfo('name'));
+
 		ob_start();
 		include('template/email-header.php');
-
-
-		printf(__('<p>A very special welcome to you, %1$s. Thank you for joining %2$s!</p>', 'cell-email'), $greetings, get_bloginfo('name'));
-
-		printf(__('<p> Your password is <strong style="color:orange">%s</strong> <br> Please keep it secret and keep it safe! </p>', 'cell-email'), $plaintext_pass);
-
-		printf(__('<p>We hope you enjoy your stay at %s. If you have any problems, questions, opinions, praise, comments, suggestions, please feel free to contact us at any time</p>', 'cell-email'), get_bloginfo('name'));
-
+		// return the message, $user object and $plaintext_pass are for filters
+		echo apply_filters( 'new-user-notification-message', $message, $user, $plaintext_pass );
 		include('template/email-footer.php');
 		$message = ob_get_contents();
 		ob_end_clean();
@@ -134,13 +132,14 @@ function cell_retrieve_password_message($content, $key) {
 
 	$email_subject = cell_retrieve_password_title();
 
+	$message = '';
+	$message .= sprintf(__('<p>It likes like you (hopefully) want to reset your password for your %s account.</p>', 'cell-email'), get_bloginfo('name'));
+	$message .= sprintf(__('<p> To reset your password, visit the following address, otherwise just ignore this email and nothing will happen. <br> %s <p>', 'cell-email'), $reset_link);
+
 	ob_start();
 	include('template/email-header.php');
-
-	printf(__('<p>It likes like you (hopefully) want to reset your password for your %s account.</p>', 'cell-email'), get_bloginfo('name'));
-
-	printf(__('<p> To reset your password, visit the following address, otherwise just ignore this email and nothing will happen. <br> %s <p>', 'cell-email'), $reset_link);
-	
+	// return the message, $user object and $plaintext_pass are for filters
+	echo apply_filters( 'retrieve-password-message', $message, $user, $reset_link );
 	include('template/email-footer.php');
 	$message = ob_get_contents();
 	ob_end_clean();
