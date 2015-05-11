@@ -15,7 +15,7 @@
 			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="height: 100% !important; width: 100% !important; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; background-color: #FAFAFA;" bgcolor="#FAFAFA">
 				<tr><td align="center" valign="top" style="padding-top: 20px; border-collapse: collapse;">
 					<table border="0" cellpadding="0" cellspacing="0" width="600" style="border-top-color: #dddddd; border-right-color: #dddddd; border-bottom-color: #dddddd; border-left-color: #dddddd; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: #FFFFFF;" bgcolor="#FFFFFF">
-						<?php if ($email_options['email_header']): ?>
+						<?php if (isset($email_options['email_header'])): ?>
 							<tr><td align="center" valign="top" style="border-collapse: collapse;">
 								<table border="0" cellpadding="0" cellspacing="0" width="600" style="background-color: #FFFFFF; border-bottom-width: 0;" bgcolor="#FFFFFF">
 									<tr><td style="border-collapse: collapse; color: #202020; font-family: Arial; font-size: 34px; font-weight: bold; line-height: 100%; text-align: center; vertical-align: middle; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" align="center" valign="middle">
