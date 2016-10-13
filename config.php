@@ -22,7 +22,7 @@ function cell_email_example_theme_menu() {
 
 function cell_email_options_enqueue_scripts() {  
 
-	wp_register_script( 'email-upload', plugins_url() . '/cell-email/js/email-upload.js', array('jquery','media-upload','thickbox'),1 );  
+	wp_register_script( 'email-upload', plugins_url() . '/cell-email/js/email-upload.js', array('jquery','media-upload','thickbox'),1000 );  
 	if ( 'settings_page_cell_email_options' == get_current_screen() -> id ) {  
 		wp_enqueue_script('jquery');  
 		wp_enqueue_script('thickbox');  
