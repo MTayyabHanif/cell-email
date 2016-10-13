@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
 		return false;  
 	});  
 	window.send_to_editor = function(html) {  
-		var image_url = $(html)[0].href;
+		var image_url = $(html)[0].src;
 		$('#logo_url').val(image_url);  
 		tb_remove();  
 	}
