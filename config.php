@@ -202,32 +202,37 @@ function cell_email_preview_callback() {
 
 function cell_email_from_name_callback($args) {
 	$options = get_option( 'cell_email_base_options' );
-	$html =  '<input type="text" id="from_name" name="cell_email_base_options[from_name]" value="' . $options['from_name'] . '" />';
+	$name = (isset($options['from_name']) ? $options['from_name'] : '');
+	$html =  '<input type="text" id="from_name" name="cell_email_base_options[from_name]" value="' . $name . '" />';
 	$html .= '<label for="cell_email_base_options[from_name]">&nbsp;'  . $args[0] . '</label>'; 
 	echo $html;	
 }
 
 function cell_email_from_email_callback($args) {
 	$options = get_option( 'cell_email_base_options' );
-	$html =  '<input type="text" id="from_email" name="cell_email_base_options[from_email]" value="' . $options['from_email'] . '" />';
+	$email = (isset($options['from_email']) ? $options['from_email'] : '');
+	$html =  '<input type="text" id="from_email" name="cell_email_base_options[from_email]" value="' . $email . '" />';
 	$html .= '<label for="cell_email_base_options[from_email]">&nbsp;'  . $args[0] . '</label>'; 
 	echo $html;	
 }
 
 function email_header_callback() {  
 	$options = get_option( 'cell_email_base_options' );  
+	$header = (isset($options['email_header']) ? $options['email_header'] : '');
 	?>  
-		<input type="text" id="logo_url" name="cell_email_base_options[email_header]" value="<?php echo esc_url( $options['email_header'] ); ?>" />  
+		<input type="text" id="logo_url" name="cell_email_base_options[email_header]" value="<?php echo esc_url( $header); ?>" />  
 		<input id="upload_logo_button" type="button" class="button" value="<?php _e( 'Upload Banner', 'cell-email' ); ?>" />  
 		<span class="description"><?php _e('Upload an image for the banner.', 'cell-email' ); ?></span>  
 	<?php  
 } 
 
 function email_header_preview_callback() {  
-	$options = get_option( 'cell_email_base_options' );  ?>  
-	<div id="upload_logo_preview" style="min-height: 100px;">  
-		<img style="max-width:100%;" src="<?php echo esc_url( $options['email_header'] ); ?>" />  
-	</div>  
+	$options = get_option( 'cell_email_base_options' );  ?>
+	<?php if (isset($options['email_header'])): ?>
+		<div id="upload_logo_preview" style="min-height: 100px;">
+			<img style="max-width:100%;" src="<?php echo esc_url( $options['email_header'] ); ?>" />  
+		</div>
+	<?php endif ?>
 	<?php  
 }
 

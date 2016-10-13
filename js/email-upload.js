@@ -6,6 +6,7 @@ jQuery(document).ready(function($) {
 	window.send_to_editor = function(html) {  
 		var image_url = $('img',html).attr('src');  
 		$('#logo_url').val(image_url);  
+    console.log('here', html, image_url)
 		tb_remove();  
 	}
 }); 
